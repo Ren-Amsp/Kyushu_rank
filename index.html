@@ -49,7 +49,7 @@
     fetch("kyushu_player_ranking.csv")
       .then(res => res.text())
       .then(csv => {
-        const data = Papa.parse(csv, { header: true }).data;
+        const data = Papa.parse(csv.trim(), { header: true }).data;
         const headers = Object.keys(data[0]);
 
         // テーブルヘッダー作成
